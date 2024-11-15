@@ -37,7 +37,7 @@ class ClientForm(models.Model):
         return f"{self.client.name} - {self.form_type.name}"
     
     def get_embed_code(self):
-        domain = "yoursite.com"  # Change this to your domain in production
+        domain = "146.190.251.72"  # Change this to your domain in production
         if settings.DEBUG:
             domain = "127.0.0.1:8000"
         
