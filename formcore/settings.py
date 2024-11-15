@@ -40,7 +40,6 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-e*u**8_61l==(-n&ypc)$=ori$
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = ['146.190.251.72', 'localhost', '127.0.0.1']
-CSRF_TRUSTED_ORIGINS = ['http://146.190.251.72']
 
 # Application definition
 INSTALLED_APPS = [
@@ -150,7 +149,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'noreply@yoursite.com'
 
-SESSION_COOKIE_SECURE = False  # Set to True only if using HTTPS
-CSRF_COOKIE_SECURE = False    # Set to True only if using HTTPS
-SESSION_COOKIE_DOMAIN = None
+
+
+#CSR
+CSRF_TRUSTED_ORIGINS = ['http://146.190.251.72']
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_DOMAIN = None
+CSRF_USE_SESSIONS = False
+CSRF_COOKIE_HTTPONLY = False
