@@ -54,13 +54,18 @@ INSTALLED_APPS = [
 ]
 
 # CORS Settings
-CORS_ALLOW_ALL_ORIGINS = True  # Only True in development
-CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = [
-    "http://146.190.251.72",
-    "https://146.190.251.72",
-    "http://localhost:8000",
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = False  # Must be False with CORS_ALLOW_ALL_ORIGINS
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS',  # Include OPTIONS for preflight
 ]
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
