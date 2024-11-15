@@ -1,0 +1,76 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+db.sqlite3
+
+# If you are using SQLite3 as your database:
+*.sqlite3
+
+# Django migrations
+#*/migrations/*
+
+# If you are using MySQL
+*.sql
+*.sql.gz
+
+# If you are using Postgres
+*.pgsql
+
+# If you are using SQLite
+*.sqlite3
+
+# Local development settings
+/local_settings.py
+
+# Static and media files
+/static/
+/media/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.henv/
+*venv/
+.env
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Celery beat schedule file
+celerybeat-schedule
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+
+# Testing
+test-results/
+
+# pip files
+pip-log.txt
+pip-delete-this-directory.txt
+
+/staticfiles
