@@ -39,7 +39,8 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-e*u**8_61l==(-n&ypc)$=ori$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ['*'] if DEBUG else os.getenv('ALLOWED_HOSTS', 'localhost').split(',')
+ALLOWED_HOSTS = ['146.190.251.72', 'localhost', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['http://146.190.251.72']
 
 # Application definition
 INSTALLED_APPS = [
@@ -136,9 +137,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'forms', 'static'),
 ]
-
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -151,14 +150,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'noreply@yoursite.com'
 
-# Production Security Settings
-if not DEBUG:
-    SECURE_SSL_REDIRECT = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    SECURE_BROWSER_XSS_FILTER = True
-    SECURE_CONTENT_TYPE_NOSNIFF = True
-    X_FRAME_OPTIONS = 'DENY'
-    SECURE_HSTS_SECONDS = 31536000  # 1 year
-    SECURE_HSTS_PRELOAD = True
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SESSION_COOKIE_SECURE = False  # Set to True only if using HTTPS
+CSRF_COOKIE_SECURE = False    # Set to True only if using HTTPS
+SESSION_COOKIE_DOMAIN = None
+CSRF_COOKIE_DOMAIN = None
