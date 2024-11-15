@@ -54,9 +54,13 @@ INSTALLED_APPS = [
 ]
 
 # CORS Settings
-CORS_ALLOW_ALL_ORIGINS = DEBUG  # Only True in development
+CORS_ALLOW_ALL_ORIGINS = True  # Only True in development
 CORS_ALLOW_CREDENTIALS = True
-
+CORS_ALLOWED_ORIGINS = [
+    "http://146.190.251.72",
+    "https://146.190.251.72",
+    "http://localhost:8000",
+]
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -152,9 +156,7 @@ DEFAULT_FROM_EMAIL = 'noreply@yoursite.com'
 
 
 #CSR
-CSRF_TRUSTED_ORIGINS = ['http://146.190.251.72']
-CSRF_COOKIE_SECURE = False
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_DOMAIN = None
-CSRF_USE_SESSIONS = False
-CSRF_COOKIE_HTTPONLY = False
+CSRF_TRUSTED_ORIGINS = [
+    "http://146.190.251.72",
+    "https://146.190.251.72",
+]
