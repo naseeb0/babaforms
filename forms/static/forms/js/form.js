@@ -4,7 +4,7 @@ class FormLoader {
     this.formId = document.currentScript.getAttribute("data-form-id");
     this.formType = document.currentScript.getAttribute("data-form-type");
     // Add base URL for API calls
-    this.apiBaseUrl = "http://127.0.0.1:8000"; // For development
+    this.apiBaseUrl = "http://146.190.251.72:8000"; // For development
     this.loadForm();
   }
 
